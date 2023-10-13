@@ -1,0 +1,332 @@
+APS360 Proposal Meeting
+choose topic
+choose VCS - github
+Project Proposal (9 Page Limit)
+The purpose of the project proposal is to demonstrate that your team:
+• knows what the goals and motivations for your project are.
+• knows what dataset you will use to train your model.
+• has a rough idea of the type of neural network(s) you will use.
+• has a rough idea of the related work that you can build on.
+• has a reasonable idea of how you will measure the success of your model/project.
+• has a clear idea of how you will work together, and how to distribute work fairly.
+		 	 	 		
+Topic Ideas: 
+Car plate recognition
+Code solver
+Natural language processing
+Music composition
+Board game playing?
+Facial Expression Detection
+Receipt Detection (sorter?) 
+https://developer.moneris.com/More/Testing/Receipt%20Requirements 
+
+
+Expense Tracker: Receipt Classifier
+
+Categories: 
+Shopping
+Groceries
+Eating out
+Entertainments
+Others
+https://en.wikipedia.org/wiki/List_of_Canadian_stores 
+Name
+Student Number
+UofT Email
+Szu-Yu (May) Chen
+1007091629
+mayc.chen@mail.utoronto.ca
+Xiangyu (Vincent) Chen
+1008421824
+xiangyu.chen@mail.utoronto.ca
+Changhao (Tony) Weng
+1006804898
+changhao.weng@mail.utoronto.ca
+Jijia (Georgia) Chen
+1007655985
+georgia.chen@mail.utoronto.ca
+
+
+
+
+Abstract:
+There are neural networks to perform optical character recognition (OCR), and neural networks to determine whether some input text belongs to a receipt or not. However, these provide little help to someone who wants to track their spending over time, only has access to physical receipts, and does not wish to store the physical receipts long-term or as bulky digital images. This proposal describes our project to extract key information (date, time, total spending) from receipt images using a combination of OCR and a string-to-value information extraction network.
+
+Recording and monitoring monthly expenditures can be a hard task. Our project involves creating a receipt scanner using a Convolutional Neural Network (CNN) to extract critical expense details from images, simplifying the task of tracking monthly expenses. The CNN model will parse textual content in receipt images, forming the foundation for implementing Optical Character Recognition (OCR).
+Our dataset comprises diverse receipt images, allowing for real-world scenario simulation during model training. 
+The proposal describes a receipt sorting solution focusing on information extraction from varied receipt images, streamlining expense management through neural network techniques.
+
+
+Introduction: 
+The purpose of the project proposal is to demonstrate that your team:
+• knows what the goals and motivations for your project are.
+• knows what dataset you will use to train your model.
+• has a rough idea of the type of neural network(s) you will use.
+• has a rough idea of the related work that you can build on.
+• has a reasonable idea of how you will measure the success of your model, and your project?
+• has a clear idea of how you will work together, and how to distribute the work fairly?
+
+Tracking personal expenses can be a tedious task, our project aims to develop a receipt scanner that facilitates the automated extraction of expenditure details, including the amount spent, date of spending, and the merchant details, with the primary objective of assisting users in efficiently tracking their monthly expenses, and sorting expenses by their respective dates.
+
+We aim to find a dataset that consists of over 800 samples, which include various receipt layouts, in order to encompass a wide range of real-world scenarios. This diverse dataset will not only serve to enhance the model's accuracy but also enable it to effectively handle different receipt structures and formats commonly encountered in practical applications.
+
+We intend to construct a Convolutional Neural Network (CNN) that will analyze receipt images with the capability to accurately delineate the textual content, including word, numbers and individual characters, within the receipts. Building a foundation for using optical character recognition (OCR) on receipts.
+
+As the primary objective of this project revolves around the extraction and categorization of words and numbers from receipts, we have identified multiple existing works in the market that are proficient in extracting textual and numerical data from images, or can efficiently classify information into distinct categories.
+
+The model's success can be gauged through metrics such as its accuracy and processing speed. For this project, attaining a 95% accuracy in text extraction is the threshold for success, and processing speed should not exceed 10 seconds to meet the success criteria.
+
+The project's overall success hinges on the effective collaboration and communication within our team. Success is defined as maintaining group chat responsiveness within 8 hours for all team members. Additionally, the team should have team members absent from weekly meetings less than twice by the end of the term. Adherence to the project plan and meeting internal deadlines are also critical indicators of success.
+
+The team should engage in a discussion of project requirements before task assignment, ensuring a clear understanding of the workload associated with each task. Once all tasks are identified, team members have the flexibility to express their task preferences. In cases where multiple members express interest in the same task and no mutual accommodation can be reached, the group will collectively decide on task assignments, possibly through an anonymous voting process. Equitable distribution of workload is paramount. If any team member perceives an uneven workload, they are encouraged to communicate this concern. The team will then evaluate the situation and consider task reassignments as necessary to ensure a balanced workload for all.
+
+Illustration/ Figures:
+
+
+
+Background & Related Work (4 points): A description of at least 5 related work in the field, to
+provide the reader a sense of what has already been done in this area, e.g., papers or existing products/software that do a related thing.
+◦ 4/4 Briefly describes 5 prior work related to your project to put your project into context. Your
+descriptions need not be complete but should contain important work related to the project.
+◦ 3/4 Background that has minor omissions or factual incorrectness, but otherwise places your project into context.
+◦ 2/4 Background contains too much information not related to your project or has major omissions of content on related work done in the field.
+◦ 1/4 Background that does not sufficiently put your project into context.
+
+The first relevant reference we've identified is Dext Prepare, which employs Optical Character Recognition (OCR) and templating technology to extract written details from receipts, invoices, and financial documents. It then presents this information in an electronic format while also extracting the expense date and categorizing the expenditure.
+https://help.dext.com/en/s/article/what-technology-does-dext-prepare-use
+@misc{Dext Help Center, url={https://help.dext.com/en/s/article/what-technology-does-dext-prepare-use}, journal={Dext Help Center}, publisher={Dext}} 
+The second related reference we've discovered is Verify. Verify utilizes Receipt OCR technology, involving the electronic or mechanical conversion of receipt images, printed or handwritten text on receipts, and invoice documents into machine-encoded text through software. This process extracts data from images or scans of documents, such as receipts or invoices, and subsequently presents a digital version of the scanned document, preserving all the original information from the paper document.
+https://www.veryfi.com/receipt-ocr-api/
+@misc{Veryfi_2023, url={https://www.veryfi.com/receipt-ocr-api/}, journal={Veryfi}, year={2023}, month={Sep}} 
+The third discovery is the Document Intelligence Studio. This tool employs Optical Character Recognition (OCR) to interpret and extract both printed and handwritten text from PDF documents and scanned images. It possesses the capability to detect paragraphs, text lines, words, geographic locations, and languages. The Document Intelligence Studio scans receipts, extracting transaction times, merchant details, tax amounts, and total expenses from them.
+https://formrecognizer.appliedai.azure.com/studio
+@misc{Form recognizer studio - microsoft azure, url={https://formrecognizer.appliedai.azure.com/studio}, journal={Form recognizer studio - microsoft azure}} 
+This is an article from Cornell University which discusses Visual Document Understanding (VDU) methods, particularly focusing on the limitations of using Optical Character Recognition (OCR) engines to read text in documents. The paper introduces an OCR-free VDU model called Donut, designed with a simple yet effective Transformer architecture and a cross-entropy loss pre-training objective. Donut is shown to outperform existing methods in terms of speed and accuracy in various VDU tasks, addressing issues like high computational costs, language flexibility, and OCR error propagation.
+
+https://arxiv.org/abs/2111.15664
+@misc{kim2022ocrfree,
+      title={OCR-free Document Understanding Transformer}, 
+      author={Geewook Kim and Teakgyu Hong and Moonbin Yim and Jeongyeon Nam and Jinyoung Park and Jinyeong Yim and Wonseok Hwang and Sangdoo Yun and Dongyoon Han and Seunghyun Park},
+      year={2022},
+      eprint={2111.15664},
+      archivePrefix={arXiv},
+      primaryClass={cs.LG}
+}
+
+The fifth related work is an online translation application called YouDao Fanyi. Users can upload an image they wish to scan for text extraction. The app processes the image through Optical Character Recognition (OCR) to extract all the text, followed by offering a bilingual comparison for translation.
+https://fanyi.youdao.com/indexLLM.html#/
+
+Data Processing: 
+The data that will be used contains over 900  receipts images found in the dataset online. The dataset contains 973 scanned dated receipts, This is the grouped and organized dataset of the original ICDAR 2019 SROIE competition dataset. In this dataset, the receipts record various types of expenses. For example, some receipts record the expenses from grocery stores while some others record from restaurants. And, the date  We may also add self-collected data (receipts from shopping, eating out, etc.) if the dataset proves to be insufficient. The bias embodied in our shopping preferences will not affect training of the OCR network, since it does operate on the textual content of the receipts.
+https://www.kaggle.com/datasets/urbikn/sroie-datasetv2/
+In practical use of our end application, input noise Input noise may arise from factors such as insufficient lighting, dirty or broken camera lens, distorted text due to bad scan angle or wrinkled paper, faded text due to low printer ink or subsequent abrasion, and blurry text due to water soaking. 
+
+And for data processing. Firstly, we will grayscale all images. After grayscaling, all images will contain only the intensity values which will be easier to train them in CNN. For faster training with ReLU, we will then normalize pixels to the range [-1, 1]. Also, we will scale them such that the majority of characters have the same font size, then the kernel size will be better determined. If necessary, we may also detect and remove large, rectangular chunks of white space to optimize convolution runtime. 
+
+
+
+Architecture
+We intend to use a convolutional neural network (CNN) as it is independent of input size, preserves spatial relationships in the image, and is well suited to capture image patterns. The kernel sizes will be chosen to be smaller than the largest font size in the preprocessed input images.
+
+To extract date, time, store name, and total spending, we use a recurrent neural network (RNN) that operates on the output string of network 1. For example, it should be able to extract the same date for all of the following representations:
+Dec. 24, 2023		December 24, 2023		12/24/2023
+12-24-2023		24-12-2023
+Finally, the end application will allow the user to search and sort receipts by any of the fields date, total spending, and shop name (alphabetical by default). A sorting algorithm such as radix or counting sort may be used.
+Since the date, time, and total spending are critical information that can cause trouble if logged incorrectly, the neural network must obtain results with high confidence, and perform at least as well as a human looking at the image. As such, the final receipt-scanning application should only log the results if the confidence exceeds a strict threshold, and prompt the user to rescan (or enter the fields manually) otherwise.
+
+The loss function should penalize high confidence predictions when the input is noisy. 
+
+Baseline Model: 
+Our baseline model will be a hard-coded algorithm that applies convolution on the input using predefined kernels. These kernels will be approximately 20px high and 14px wide, each containing weights of 1 painted in the shape of the character it will extract (in a font (or several) commonly found on receipts), and 0s elsewhere. To account for various font sizes, the model will apply convolution using each kernel at multiple scales. The scaled kernels will be generated using traditional image processing techniques.
+Since this model does not account for the multitude of fonts that receipts can contain, we expect it to perform worse than the trained kernel(s) in almost all cases.
+Furthermore, since each kernel matches for an exact combination of font, font size, and character, this algorithm will be much slower than the primary method. If this algorithm proves too slow to yield results, we can either use a lower input resolution, or run it on cropped input which contains fewer pixels.
+
+Ethical Considerations (2 points): Description of a use of the system that could give rise to ethical issues. Are there limitations to your model? Your training data?
+◦ 2/2 Thoughtful consideration of ethical issues in data collection, and the impact of using the model.
+◦ 1/2 Some consideration of ethical issues in data collection.
+◦ 0/2 Ethical issues in data collection are not presented.
+
+An ethical concern arises when the system extracts sensitive information from publicly shared images without consent, potentially infringing on privacy, especially when scanning and extracting data from social media images. This usage, devoid of proper consent and ethical considerations, can lead to data privacy and security issues.
+
+The model may face limitations in safeguarding data privacy. For instance, the network's process of extracting the merchant's name from receipts, consequently revealing the places where users shop, raises significant privacy concerns. Storing or processing sensitive financial data, such as receipts that contain credit card information or personal identifiers, can also pose significant privacy risks
+
+The dataset we are using is open to the public, therefore it does not violate any privacy issues. 
+In addition, The United Nations Educational, Scientific and Cultural Organization (UNESCO) has created a recommendation guideline for the Ethics of Artificial Intelligence. This will be referenced and referred to throughout the process of the development of the model, and high-risk ethical risks will be highlighted and considered. 
+ 
+Project Plan: 
+Regular meetings will be held every Thursday from 4-5 PM it will be held online. In the Meeting Schedule below, there is an outline of current planned meetings and additional meetings will be arranged if needed. (Table 2) The main communication platform is WeChat, questions and concerns will be addressed in the group chat and additional meetings will be arranged. To maximize effective communications, the expectations for team members are that messages sent during weekdays (between 9:00 to 22:00), will be addressed within 2-3 hours, during weekends and holidays, messages need to be addressed within 5 hours. If messages are sent later than 22:00, the message should be addressed before 12:00 the next day. The documents and figures will be stored on the shared Google Drive. Git will be used for version control, and post each person’s code responsibilities in WeChat to minimize merge conflicts.
+
+Table 1: Project Plan
+Task Status
+Title
+Task
+Internal Deadline
+Member Responsible
+ Completed
+Formation of Group (4)
+N/A
+N/A
+All Members
+ Completed
+Project Proposal 
+(Due: 10/13, 11:59pm)
+Set up Git repository and Shared Drive
+10/10/2023
+Vincent
+ Not Started
+Introduction, Ethical Consideration, Background and Related Work
+10/13/2023
+(6:00PM)
+Georgia
+ Not Started
+Data Processing 
+10/13/2023
+(6:00 PM)
+Tony
+ Not Started
+Risk Register, Illustration and Project Plan
+10/13/2023
+(6:00 PM)
+May
+ Not Started
+Architecture and Baseline Models
+10/13/2023
+(6:00 PM)
+Vincent
+ Not Started
+Project: Developing Neuron Network
+Obtain, Organize and Cleaned Data
+10/31/2023
+Tony
+ Not Started
+Complete Reasonable Baseline Model (Rough Draft)
+10/31/2023
+Georgia, Vincent and May
+ Not Started
+Produce >1 qualitative and quantitative result
+10/31/2023
+ Not Started
+Adjust Project Plan according to current progress (Meeting)
+10/31/2023
+All Members
+ Not Started
+Progress Report 
+(Due: 11/03/2023, 11:59PM)
+Brief Project Description
+11/2/2023 (4 PM)
+May
+ Not Started
+Notable Contribution - Data Processing
+11/2/2023
+(4 PM)
+Tony
+ Not Started
+Notable Contribution - Baseline Model
+11/2/2023
+(4 PM)
+Vincent 
+ Not Started
+Notable Contribution - Primary Model
+11/2/2023
+(4 PM)
+Georgia
+ Not Started
+Individual Contributions and Responsibilities
+11/2/2023
+(4 PM)
+All Members
+ Not Started
+Project Final Report
+(Due: 12/01/2023, 11:59PM)
+Introduction, Background and Related Work, Ethical Consideration
+11/26/2023
+Georgia 
+ Not Started
+Data Processing, Evaluate the Model
+11/26/2023
+Tony
+ Not Started
+Architecture and Baseline Model, Discussion
+11/26/2023
+Vincent
+ Not Started
+Illustration and Figures, Results 
+11/26/2023
+May
+ Not Started
+Submission (Template)
+11/30/2023
+All Members
+ Not Started
+Project Presentation
+(Due: 12/01/2023, 11:59PM)
+Outline and Plan Project Presentation
+11/26/2023
+All Members
+ Not Started
+Record Project Presentation and Submit
+11/28/2023
+All Members
+
+
+Table 2: Meeting Schedule
+Date
+Topic of Meeting
+10/07/2023
+Project Proposal Discussion: 
+Decide on a topic and allocate sections of the project proposal. 
+10/12/2023
+Project Proposal Check-in
+Check in on the progress, address any questions that have arose
+Discussing and confirming the basic outline of the neuron network. 
+10/13/2023
+Project Proposal:
+Finalize proposal, input into latex template, and submit the proposal.
+10/15/2023
+Initial Meeting: 
+Discussion on details of approach and allocate responsibilities of developing baseline and primary model
+10/19/2023
+Check-in Meeting:
+Address any questions and concerns, make adjustments to project structure if needed
+10/26/2023
+Check-in Meeting:
+Discussion of Project Progress Report
+Address any questions and concerns, make adjustments to project structure if needed
+11/2/2023
+Progress Report: 
+Check the baseline model approach and results.
+Finalize progress report and submit. 
+11/9/2023
+11/16/2023
+
+
+Check-in Meeting:
+Address the current status of the model and make adjustments , and check results
+11/23/2023
+Project Final Report and Presentation: 
+Allocation of sections in the presentation and finalize data
+11/30/2023
+Final Adjustments and Submissions
+
+
+Risk Register:
+There are several potential risks associated with this project which will be discussed in detail in the following section. The effects of these risks and the mitigation strategy of the team are considered. 
+
+Risk 1: Team members leaving the course
+The impact of this risk leads to increased workload and reallocating responsibilities within the group and is usually unexpected and might cause shock and conflict within the team. This will lead to a delay in the project plan and the overall progress of the project. This will be prevented by holding regular check-up meetings throughout the semester to minimize issues that might contribute to a member leaving the team. To mitigate the negative effects of this risk, the leaving member must hold a meeting with all the team members to provide up-to-date information for the most efficient transition, and also provide feedback and address potential issues that caused this. Afterwards, the team must hold a meeting to reallocate the responsibilities and communicate concerns. 
+
+Risk 2: Risk 3: Low Model Performance - Insufficient Data
+The dataset that is selected by the team consists of 900+ data receipts and viewing the quality of the receipts and the corresponding correct information. The data that is insufficient will lead to inaccuracy, biased predictions and high uncertainty by the CNN model, the team will refer to backup datasets or datasets that will be collected by the team as a supplement. The current dataset can also be expanded by introducing other datasets (different, fonts or receipt formats) to increase the variability for the model to learn from. 
+
+Risk 3: Security and Privacy of Sensitive User Information
+This risk is already addressed in the ethical consideration section above. However, it is still a potential risk, and its effect and mitigation strategy will be addressed. This might lead to ethical issues and a violation of personal privacy. The model will minimize data collection from users and only training data will be applied to improve the hyperparameter, to prevent data breach from the model.. Also, the platform should have a choice for users to opt out of data collection and receive consent from users to collect data. 
+
+Risk 4: Time Constraints
+This risk will more likely occur during exam weeks when there are large amounts of due dates and tests that will affect the ability to meet internal deadlines. This might cause a delay in submission and internal deadlines, and it might cause conflict within our team. The risk of time constraints will be mitigated by proposing a complete project plan and internal deadlines with a regular meeting schedule. This will prevent any unexpected workload and the internal deadlines are set to be 1-2 days prior to the deadline, this can give the team a chance to complete work that did not meet the internal deadline. The member who is unable to meet the internal deadline should notify the team prior to the due date.
+
+Link to Github or Colab Notebook
+https://github.com/LingLing40Hours/aps360_proj
+
+References
+
+

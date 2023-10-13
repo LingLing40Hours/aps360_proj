@@ -1,1 +1,2 @@
 https://graphicdesign.stackexchange.com/questions/20027/what-font-is-typically-used-for-receipts
+https://stackoverflow.com/questions/46597877/normalizing-to-0-1-vs-1-1
