@@ -3,3 +3,7 @@ clean_txt/
 clean_img/
 clean_entity/
 data/
+models/
+clean_entity.zip
+clean_txt.zip
+clean_img.zip
